@@ -13,3 +13,5 @@ function solve(A, B) {
     console.log('==');
   }
 }
+
+solve(A, B);
