@@ -1,1 +1,2 @@
-const fs
+const fs = require('fs');
+const input
