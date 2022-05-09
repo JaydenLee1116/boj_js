@@ -7,10 +7,10 @@ const input = fs.readFileSync(path).toString();
 
 let answer = '';
 function solve(number) {
-  for (let i = Number(number); i >= 1; i--) {
+  for (i = 1; i <= number; i++) {
     answer += i + '\n';
   }
+  return answer.trim();
 }
-solve(input);
 
-console.log(answer);
+console.log(solve(input));
