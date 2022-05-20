@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { mainModule } = require('process');
 const path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
 
 const input = Number(fs.readFileSync(path).toString().trim());
