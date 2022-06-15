@@ -6,48 +6,37 @@ const input = fs
   .toString()
   .trim()
   .split('\n')
-  .map((number) => parseInt(number));
+  .map((x) => parseInt(x));
+const count = input.shift();
 
-const solve = (input) => {
-  const count = input.shift();
-  const arr = input;
-
-  const ans = input.sort((a, b) => a - b);
-
-  for (let i = 0; i < ans.length; i++) {
-    console.log(ans[i]);
-  }
-};
-
-solve(input);
-
-/* 버블 소트 구현
-const fs = require('fs');
-const path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
-
-const input = fs
-  .readFileSync(path)
-  .toString()
-  .trim()
-  .split('\n')
-  .map((number) => parseInt(number));
-
-const solve = (input) => {
-  let count = input.shift();
-  for (let i = count - 1; i > 0; i--) {
+const solveBubble = (input) => {
+  for (let i = input.length - 1; i > 0; i--) {
     for (let j = 0; j < i; j++) {
       if (input[j] > input[j + 1]) {
-        let a = input[j];
-        input[j] = input[j + 1];
-        input[j + 1] = a;
+        let temp = input[j + 1];
+        input[j + 1] = input[j];
+        input[j] = temp;
       }
     }
   }
-
-  for (let num of input) {
-    console.log(num);
-  }
+  return input;
 };
 
-solve(input);
-*/
+// console.log(solveBubble(input));
+
+const solveSelect = (input) => {
+  for (let i = 0; i < input.length - 1; i++) {
+    let indexMin = i;
+    for (let j = i; j < input.length; j++) {
+      if (input[j] < input[indexMin]) {
+        indexMin = j;
+      }
+    }
+    let temp = input[i];
+    input[i] = input[indexMin];
+    input[indexMin] = temp;
+  }
+  return input;
+};
+
+// console.log(solveSelect(input));
