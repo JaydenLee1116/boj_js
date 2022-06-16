@@ -24,7 +24,7 @@ const solveBubble = (input) => {
 
 // console.log(solveBubble(input));
 
-const solveSelect = (input) => {
+const solveSelection = (input) => {
   for (let i = 0; i < input.length - 1; i++) {
     let indexMin = i;
     for (let j = i; j < input.length; j++) {
@@ -39,4 +39,4 @@ const solveSelect = (input) => {
   return input;
 };
 
-// console.log(solveSelect(input));
+// console.log(solveSelection(input));
