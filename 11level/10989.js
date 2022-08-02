@@ -1,4 +1,3 @@
-const { countReset } = require('console');
 const fs = require('fs');
 const path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
 
