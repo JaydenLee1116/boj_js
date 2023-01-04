@@ -1,5 +1,5 @@
 const FS = require('fs');
-const PATH = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
+const PATH = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
 let input = FS.readFileSync(PATH).toString().trim();
 

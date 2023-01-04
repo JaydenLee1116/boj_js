@@ -1,6 +1,6 @@
 const { count } = require('console');
 let fs = require('fs');
-let path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
+let path = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
 let input = fs.readFileSync(path).toString().trim();
 
@@ -18,12 +18,8 @@ function solve(input) {
     }
     countTotal.push(count);
   }
-  if (
-    countTotal.filter((value) => value === Math.max(...countTotal)).length === 1
-  ) {
-    console.log(
-      String.fromCharCode(countTotal.indexOf(Math.max(...countTotal)) + 65)
-    );
+  if (countTotal.filter((value) => value === Math.max(...countTotal)).length === 1) {
+    console.log(String.fromCharCode(countTotal.indexOf(Math.max(...countTotal)) + 65));
   } else {
     console.log('?');
   }

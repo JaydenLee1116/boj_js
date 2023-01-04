@@ -5,7 +5,7 @@
 // 3
 // 층은 0층부터, 호수는 1호부터
 const fs = require('fs');
-const path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
+const path = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
 const input = fs
   .readFileSync(path)
@@ -21,9 +21,7 @@ function solve(input) {
     let kFloor = input.shift();
     let nHosu = input.shift() - 1; // 1호가 0번째 인덱스에 해당되게 설정
     // let apt = new Array(kFloor + 1).fill(new Array(nHosu + 1).fill(1)); 이렇게 배열을 만들면 nHosu에 대한 같은 배열에 대한 주소값이 들어간다.
-    let apt = Array.from(new Array(kFloor + 1), () =>
-      new Array(nHosu + 1).fill(1)
-    );
+    let apt = Array.from(new Array(kFloor + 1), () => new Array(nHosu + 1).fill(1));
 
     apt[0] = [...apt[0].keys()].map((x) => x + 1); // 0층을 1부터 1씩 증가하는 배열로 만들어주기
 

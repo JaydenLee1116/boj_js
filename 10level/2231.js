@@ -1,6 +1,6 @@
 const fs = require('fs');
 const { stringify } = require('querystring');
-const path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
+const path = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
 let input = fs.readFileSync(path).toString().trim();
 

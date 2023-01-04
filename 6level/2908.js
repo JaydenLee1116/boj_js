@@ -1,5 +1,5 @@
 let fs = require('fs');
-let path = process.platform === 'linux' ? '/dev/stdin' : './data.txt';
+let path = process.platform === 'linux' ? '/dev/stdin' : './input.txt';
 
 let input = fs.readFileSync(path).toString().trim().split(' ');
 
@@ -8,7 +8,7 @@ function solve(input) {
     value
       .split('')
       .reverse()
-      .reduce((acc, cur) => acc + cur)
+      .reduce((acc, cur) => acc + cur),
   ));
   return Math.max(...arrayReverse.map((x) => Number(x)));
 }
