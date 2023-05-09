@@ -6,6 +6,8 @@
 // 입력받은 문자열을 split()을 통해 배열화
 // const inputData = fs.readFileSync('/dev/stdin').toString().split(' ');
 
+// A + B
+
 const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : '../input.txt';
 const inputData = fs.readFileSync(filePath).toString().split(' ');
