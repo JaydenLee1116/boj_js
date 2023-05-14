@@ -3,10 +3,17 @@ const fs = require('fs');
 const filePath = process.platform === 'linux' ? '/dev/stdin' : '../input.txt';
 const input = fs.readFileSync(filePath).toString().split('\n');
 
-console.log(input); // input 모양 확인 후 주석처리하기
+// console.log(input); // input 모양 확인 후 주석처리하기
 
 function solution(input) {
+  // input을 문제에 맞게 가공
+  const count = input[0];
+  const numbers = input[1].split(' ');
+  const numberExpected = input[2];
   // 풀이 코드 작성
+  return numbers.filter((n) => {
+    return n === numberExpected;
+  }).length;
 }
 
-// console.log(solution(input)); // 제출시 주석 풀기
+console.log(solution(input));
