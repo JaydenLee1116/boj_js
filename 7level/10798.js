@@ -7,18 +7,15 @@ const input = fs.readFileSync(filePath).toString().split('\n');
 
 function solution(input) {
   // 풀이 코드 작성
-  const rowCount = input.length;
-
-  const rows = input.map((row) => row.split(' ').map((v) => +v));
-  const maxNumber = Math.max(...rows.flat());
-
-  console.log(maxNumber);
-  for (let i = 0; i < rowCount; i++) {
-    if (rows[i].includes(maxNumber)) {
-      console.log(`${i + 1} ${rows[i].indexOf(maxNumber) + 1}`);
-      break;
+  let answer = '';
+  let maxLength = Math.max(...input.map((v) => v.length));
+  for (let i = 0; i < maxLength; i++) {
+    for (let j = 0; j < input.length; j++) {
+      if (input[j][i] === undefined) continue;
+      answer += input[j][i];
     }
   }
+  return answer;
 }
 
-solution(input); // 제출시 주석 풀기
+console.log(solution(input)); // 제출시 주석 풀기
